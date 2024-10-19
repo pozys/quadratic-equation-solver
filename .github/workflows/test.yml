@@ -30,8 +30,8 @@ jobs:
           php-version: "8.3"
       - uses: actions/checkout@v4
       - name: Install PHP Dependencies
-        run: sudo pecl install xdebug && sudo docker-php-ext-enable xdebug
-          && curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        run:
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           && chmod +x ./cc-test-reporter
       - name: run coverage analysis
         env:
