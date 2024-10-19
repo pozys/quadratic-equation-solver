@@ -37,4 +37,4 @@ jobs:
       - name: run coverage analysis
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        run: ./cc-test-reporter before-build && vendor/bin/phpunit tests --coverage-clover clover.xml && ./cc-test-reporter after-build -t clover --exit-code $?
+        run: ./cc-test-reporter before-build && vendor/bin/phpunit tests  --coverage-filter src --coverage-clover clover.xml && ./cc-test-reporter after-build -t clover --exit-code $?
